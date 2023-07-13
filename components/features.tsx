@@ -5,6 +5,7 @@ import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import FeaturesBg from "@/public/images/features-bg.png";
 import FeaturesElement from "@/public/images/features-element.png";
+import Map from "@/public/images/map.png";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -33,10 +34,9 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Destinasi Wisata</h1>
+            <h1 className="h2 mb-4">Profile Desa</h1>
             <p className="text-xl text-gray-600">
-              Berbagai destinasi wisata yang dapat anda kunjungi di Desa
-              Kebondowo
+              Profile Desa Wisata Kebondowo
             </p>
           </div>
 
@@ -71,11 +71,11 @@ export default function Features() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                      Peta Desa
                     </div>
                     <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                      Desa Kebondowo terbagi menjadi 7 dusun yaitu Kebondowo,
+                      Kebonsari, Pundan, Jrakah, Kauman, Jambon, Kebonbawang
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -102,7 +102,7 @@ export default function Features() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                      Warga Desa
                     </div>
                     <div className="text-gray-600">
                       Take collaboration to the next level with security and
@@ -136,7 +136,7 @@ export default function Features() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                      Produk Desa
                     </div>
                     <div className="text-gray-600">
                       Take collaboration to the next level with security and
@@ -185,18 +185,10 @@ export default function Features() {
                     <div className="relative inline-flex flex-col">
                       <Image
                         className="md:max-w-none mx-auto rounded"
-                        src={FeaturesBg}
+                        src={Map}
                         width={500}
                         height="462"
                         alt="Features bg"
-                      />
-                      <Image
-                        className="md:max-w-none absolute w-full left-0 transform animate-float"
-                        src={FeaturesElement}
-                        width={500}
-                        height="44"
-                        alt="Element"
-                        style={{ top: "30%" }}
                       />
                     </div>
                   </Transition>

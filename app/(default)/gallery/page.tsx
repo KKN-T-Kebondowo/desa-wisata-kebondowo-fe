@@ -1,59 +1,16 @@
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
+import galleryImages from "../../../data/gallery.json";
+import GalleryComponent, { GalleryImage } from "@/components/gallery";
 
 export const metadata = {
   title: "Galeri Kebondowo",
   description: "Page description",
 };
 
-const generateRandomCaption = () => {
-  const captions = [
-    "Beautiful scenery",
-    "Exploring nature",
-    "Fun times with friends",
-    "Memorable moments",
-    "Adventures in Kebondowo",
-    "Captivating landscapes",
-    "Community gatherings",
-    "Discovering local culture",
-    "Serene beauty of Kebondowo",
-  ];
+interface GalleryProps {
+  galleryImages: GalleryImage[];
+}
 
-  return captions[Math.floor(Math.random() * captions.length)];
-};
-
-const galleryImages = [...Array(9)].map(() => ({
-  src: "/images/hero.jpg",
-  caption: generateRandomCaption(),
-}));
-
-export default function Gallery() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
-    null
-  );
-
-  const handleImageClick = (index: number) => {
-    setSelectedImageIndex(index);
-  };
-
-  const handleNextImage = () => {
-    setSelectedImageIndex(
-      (prevIndex) => (prevIndex! + 1) % galleryImages.length
-    );
-  };
-
-  const handlePreviousImage = () => {
-    setSelectedImageIndex((prevIndex) =>
-      prevIndex === 0 ? galleryImages.length - 1 : prevIndex! - 1
-    );
-  };
-
-  const handleCloseModal = () => {
-    setSelectedImageIndex(null);
-  };
-
+const Gallery: React.FC<GalleryProps> = () => {
   return (
     <>
       <section className="relative">
@@ -112,76 +69,13 @@ export default function Gallery() {
                   Kebondowo
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {galleryImages.map((image, index) => (
-                  <div
-                    className="relative cursor-pointer"
-                    key={index}
-                    data-aos="zoom-y-out"
-                    data-aos-delay="200"
-                    onClick={() => handleImageClick(index)}
-                  >
-                    <div className="relative w-full h-64 overflow-hidden">
-                      <Image
-                        src={image.src}
-                        width={500}
-                        height={500}
-                        alt=""
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    </div>
-                    {/* Captions */}
-                    <div className="relative -mt-5">
-                      <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <p className="text-gray-600">{image.caption}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
+            <GalleryComponent galleryImages={galleryImages} />
           </div>
         </div>
       </section>
-
-      {/* Fullscreen modal */}
-      {selectedImageIndex !== null && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="max-w-3xl mx-auto relative">
-            <button
-              className="absolute top-1/2 transform -translate-y-1/2 left-0 m-4 text-white text-3xl focus:outline-none"
-              onClick={handlePreviousImage}
-            >
-              &lt;
-            </button>
-            <button
-              className="absolute top-1/2 transform -translate-y-1/2 right-0 m-4 text-white text-3xl focus:outline-none"
-              onClick={handleNextImage}
-            >
-              &gt;
-            </button>
-            <button
-              className="absolute top-0 right-0 m-4 text-white text-3xl focus:outline-none"
-              onClick={handleCloseModal}
-            >
-              &times;
-            </button>
-            <Image
-              width={500}
-              height={500}
-              src={galleryImages[selectedImageIndex].src}
-              alt=""
-              className="w-full"
-            />
-            <div className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 p-4">
-              <p className="text-white text-center">
-                {galleryImages[selectedImageIndex].caption}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
-}
+};
+
+export default Gallery;

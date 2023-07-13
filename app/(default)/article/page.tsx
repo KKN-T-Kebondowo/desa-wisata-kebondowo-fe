@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export const metadata = {
-  title: "Artikel Kebondowo",
-  description:
-    "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",
-};
+// export const metadata = {
+//   title: "Artikel Kebondowo",
+//   description:
+//     "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",
+// };
 
 export default function Article() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -100,39 +100,40 @@ export default function Article() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {/* Article cards */}
                 {currentArticles.map((article) => (
-                  <div
-                    className="bg-white rounded-lg shadow-lg"
-                    data-aos="zoom-y-out"
-                    data-aos-delay={150 * (article.id + 1)}
-                    key={article.id}
+                  <Link
+                    href={`article/${article.id}`}
+                    className="inline-block mt-4"
                   >
-                    <Image
-                      className="w-full h-64 object-cover object-center rounded-t-lg"
-                      src={`/images/hero.jpg`}
-                      width={500}
-                      height={500}
-                      alt={`Article ${article.id}`}
-                    />
-                    <div className="p-6">
-                      <h3 className="text-2xl font-semibold">
-                        {article.title}
-                      </h3>
-                      <div className="flex text-xs justify-between items-center my-2">
-                        <p className="text-gray-500">
-                          Penulis: {article.author}
-                        </p>
-                        <p className="text-gray-500">Tanggal: {article.date}</p>
+                    <div
+                      className="bg-white rounded-lg shadow-lg"
+                      data-aos="zoom-y-out"
+                      data-aos-delay={150 * (article.id + 1)}
+                      key={article.id}
+                    >
+                      <Image
+                        className="w-full h-64 object-cover object-center rounded-t-lg"
+                        src={`/images/hero.jpg`}
+                        width={500}
+                        height={500}
+                        alt={`Article ${article.id}`}
+                      />
+                      <div className="p-6">
+                        <h3 className="text-2xl font-semibold">
+                          {article.title}
+                        </h3>
+                        <div className="flex text-xs justify-between items-center my-2">
+                          <p className="text-gray-500">
+                            Penulis: {article.author}
+                          </p>
+                          <p className="text-gray-500">
+                            Tanggal: {article.date}
+                          </p>
+                        </div>
+                        <p className="text-gray-600">{article.content}</p>
+                        <p className="text-blue-600">Baca Selengkapnya</p>
                       </div>
-                      <p className="text-gray-600">{article.content}</p>
-
-                      <Link
-                        href={`article/${article.id}`}
-                        className="inline-block mt-4 text-blue-500 hover:text-blue-600"
-                      >
-                        Baca Selengkapnya
-                      </Link>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 
