@@ -37,9 +37,9 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Profile Desa</h1>
+            <h1 className="h2 mb-4">Profil Desa</h1>
             <p className="text-xl text-gray-600">
-              Profile Desa Wisata Kebondowo
+              Profil Desa Wisata Kebondowo
             </p>
           </div>
 
@@ -51,11 +51,9 @@ export default function Features() {
               data-aos="fade-right"
             >
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">Powerful suite of tools</h3>
+                <h3 className="h3 mb-3">Potensi Desa</h3>
                 <p className="text-xl text-gray-600">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa.
+                  Potensi-potensi yang ada di desa Kebondowo
                 </p>
               </div>
               {/* Tabs buttons */}
