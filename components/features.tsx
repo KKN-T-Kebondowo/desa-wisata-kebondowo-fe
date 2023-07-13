@@ -3,9 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
-import FeaturesBg from "@/public/images/features-bg.png";
+// import FeaturesBg from "@/public/images/features-bg.png";
 import FeaturesElement from "@/public/images/features-element.png";
 import Map from "@/public/images/map.png";
+import Produk from "@/public/images/produk.jpg";
+import Wisata from "@/public/images/wisata.jpg";
+import Wisata2 from "@/public/images/wisata2.jpg";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -102,11 +105,11 @@ export default function Features() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Warga Desa
+                      Wisata Desa
                     </div>
                     <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                      Berbagai daerah wisata seperti Bukit Cinta, Rawa Pening,
+                      dan Gili Pesona
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -139,8 +142,8 @@ export default function Features() {
                       Produk Desa
                     </div>
                     <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                      Berbagai produk khas Desa Kebondowo seperti olahan ikan
+                      hasil rawa pening, kopi, dan lain-lain
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -209,19 +212,26 @@ export default function Features() {
                     <div className="relative inline-flex flex-col">
                       <Image
                         className="md:max-w-none mx-auto rounded"
-                        src={FeaturesBg}
+                        src={Wisata}
                         width={500}
                         height="462"
                         alt="Features bg"
                       />
                       <Image
+                        className="md:max-w-none mx-auto rounded lg:-mt-24 lg:-mr-16"
+                        src={Wisata2}
+                        width={500}
+                        height="462"
+                        alt="Features bg"
+                      />
+                      {/* <Image
                         className="md:max-w-none absolute w-full left-0 transform animate-float"
                         src={FeaturesElement}
                         width={500}
                         height="44"
                         alt="Element"
                         style={{ top: "30%" }}
-                      />
+                      /> */}
                     </div>
                   </Transition>
                   {/* Item 3 */}
@@ -241,19 +251,19 @@ export default function Features() {
                     <div className="relative inline-flex flex-col">
                       <Image
                         className="md:max-w-none mx-auto rounded"
-                        src={FeaturesBg}
+                        src={Produk}
                         width={500}
                         height="462"
                         alt="Features bg"
                       />
-                      <Image
+                      {/* <Image
                         className="md:max-w-none absolute w-full left-0 transform animate-float"
                         src={FeaturesElement}
                         width={500}
                         height="44"
                         alt="Element"
                         style={{ top: "30%" }}
-                      />
+                      /> */}
                     </div>
                   </Transition>
                 </div>

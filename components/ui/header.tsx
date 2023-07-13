@@ -40,6 +40,14 @@ export default function Header() {
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link
+                  href="/"
+                  className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+                >
+                  Beranda
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/article"
                   className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
                 >
@@ -60,14 +68,6 @@ export default function Header() {
                   className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
                 >
                   Wisata
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/login"
-                  className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Login
                 </Link>
               </li>
               {/* <li>
