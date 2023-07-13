@@ -6,11 +6,12 @@ export const metadata = {
   description: "Page description",
 };
 
-interface GalleryProps {
-  galleryImages: GalleryImage[];
-}
+// interface GalleryProps {
+//   galleryImages: GalleryImage[];
+// }
 
-const Gallery: React.FC<GalleryProps> = () => {
+// const Gallery: React.FC<GalleryProps> = () => {
+const Gallery = () => {
   return (
     <>
       <section className="relative">
