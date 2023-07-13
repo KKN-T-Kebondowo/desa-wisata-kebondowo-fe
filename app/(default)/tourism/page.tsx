@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { useState } from "react";
-
 export const metadata = {
   title: "Wisata Kebondowo",
   description:
