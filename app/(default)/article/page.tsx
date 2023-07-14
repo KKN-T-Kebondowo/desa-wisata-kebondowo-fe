@@ -1,35 +1,19 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 import Artikel from "@/data/article.json";
+import Pagination from "@/components/pagination";
 
-// export const metadata = {
-//   title: "Artikel Kebondowo",
-//   description:
-//     "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",
-// };
+export const metadata = {
+  title: "Artikel Kebondowo",
+  description:
+    "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",
+};
 
 export default function Article() {
-  const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 6;
-  const articlesCount = 10;
+  const articlesCount = Artikel.data.length;
   const totalPages = Math.ceil(articlesCount / articlesPerPage);
-
-  // Pagination logic
-  const indexOfLastArticle = currentPage * articlesPerPage;
-  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = Artikel.data.slice(
-    indexOfFirstArticle,
-    indexOfLastArticle
-  );
-
-  const handlePageChange = (pageNumber: number) => {
-    window.scrollTo(0, 0);
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <>
@@ -91,15 +75,15 @@ export default function Article() {
               {/* Article section */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {/* Article cards */}
-                {currentArticles.map((article) => (
+                {Artikel.data.map((article, idx) => (
                   <Link
-                    href={`article/${article.id}`}
+                    href={`article/${article.slug}`}
                     className="inline-block mt-4"
                   >
                     <div
                       className="bg-white rounded-lg shadow-lg"
                       data-aos="zoom-y-out"
-                      data-aos-delay={150 * (article.id + 1)}
+                      data-aos-delay={150 * (idx + 1)}
                       key={article.id}
                     >
                       <img
@@ -136,21 +120,7 @@ export default function Article() {
               </div>
 
               {/* Pagination */}
-              <div className="flex justify-center mt-8 gap-3">
-                {Array.from({ length: totalPages }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handlePageChange(index + 1)}
-                    className={`${
-                      currentPage === index + 1
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-blue-500"
-                    } hover:bg-blue-500 hover:text-white font-medium py-2 px-4 rounded-full focus:outline-none transition duration-300`}
-                  >
-                    {index + 1}
-                  </button>
-                ))}
-              </div>
+              <Pagination totalPages={totalPages} />
             </div>
           </div>
         </div>
