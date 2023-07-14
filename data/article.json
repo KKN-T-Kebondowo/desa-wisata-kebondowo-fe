@@ -1,4 +1,45 @@
 {
   "message": "Article data successfully received",
-  "data": [{}]
+  "data": [
+    {
+      "id": 1,
+      "title": "Kopi Khas Kebondowo",
+      "slug": "kopi-khas-kebondowo",
+      "author": "Fahrel Gibran",
+      "content": "Kopi Khas Kebondowo adalah kopi yang dibuat dari biji kopi pilihan yang diambil dari kebun kopi di daerah Kebondowo, Jawa Timur. Kopi ini memiliki rasa yang khas dan berbeda dari kopi lainnya.",
+      "picture_url": "https://awsimages.detik.net.id/community/media/visual/2022/01/02/manfaat-kopi_169.jpeg?w=1200",
+      "created_at": "2021-01-01 00:00:00",
+      "updated_at": "2021-01-01 00:00:00"
+    },
+    {
+      "id": 2,
+      "title": "Wisata Rawa Pening",
+      "slug": "wisata-rawa-pening",
+      "author": "Rifan Fatoni",
+      "content": "Bali is a beautiful island located in Indonesia. Known for its stunning beaches, vibrant culture, and lush landscapes, Bali attracts millions of tourists every year. From iconic rice terraces to ancient temples and traditional arts, Bali offers a unique experience for travelers.",
+      "picture_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Rawa_Pening_Central_Java.jpg",
+      "created_at": "2022-05-10 08:30:00",
+      "updated_at": "2022-05-10 08:30:00"
+    },
+    {
+      "id": 3,
+      "title": "Makanan Khas Rawa Pening",
+      "slug": "makanan-khas-rawa-pening",
+      "author": "Faiz",
+      "content": "Yoga is a practice that originated in ancient India and has gained popularity worldwide. It combines physical postures, breathing exercises, and meditation to promote overall well-being. Regular practice of yoga can improve flexibility, strength, and balance, as well as reduce stress and promote mental clarity.",
+      "picture_url": "https://cdn2.tstatic.net/jateng/foto/bank/images/gurihnya-ikan-danau-berpadu-bumbu-pedas-dan-rempah-yang-menggoda_20161227_093224.jpg",
+      "created_at": "2022-08-20 14:15:00",
+      "updated_at": "2022-08-20 14:15:00"
+    },
+    {
+      "id": 4,
+      "title": "Alam Banyubiru",
+      "slug": "alam-banyubiru",
+      "author": "Elsa Frozen",
+      "content": "Bangkok, the capital city of Thailand, is famous for its vibrant street food scene. From mouth-watering pad Thai and spicy som tam to savory satay and refreshing mango sticky rice, Bangkok offers a wide array of delicious street food options. Exploring the local street food stalls is a must for any food lover visiting the city.",
+      "picture_url": "https://banyu-biru.com/sitepad-data/uploads/2021/04/vlcsnap-2021-04-21-21h28m54s950.png",
+      "created_at": "2022-11-05 11:45:00",
+      "updated_at": "2022-11-05 11:45:00"
+    }
+  ]
 }

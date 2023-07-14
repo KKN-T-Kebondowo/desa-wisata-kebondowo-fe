@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import Artikel from "@/data/article.json";
+
 // export const metadata = {
 //   title: "Artikel Kebondowo",
 //   description:
@@ -16,20 +18,10 @@ export default function Article() {
   const articlesCount = 10;
   const totalPages = Math.ceil(articlesCount / articlesPerPage);
 
-  // Generate dummy data
-  const dummyArticles = Array.from({ length: articlesCount }, (_, index) => ({
-    id: index + 1,
-    title: `Judul Artikel ${index + 1}`,
-    author: "John Doe",
-    date: "12 Juli 2023",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet malesuada nibh. Sed id luctus est. Sed vel dictum felis, nec ullamcorper lectus.",
-  }));
-
   // Pagination logic
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = dummyArticles.slice(
+  const currentArticles = Artikel.data.slice(
     indexOfFirstArticle,
     indexOfLastArticle
   );
@@ -110,9 +102,9 @@ export default function Article() {
                       data-aos-delay={150 * (article.id + 1)}
                       key={article.id}
                     >
-                      <Image
+                      <img
                         className="w-full h-64 object-cover object-center rounded-t-lg"
-                        src={`/images/hero.jpg`}
+                        src={article.picture_url}
                         width={500}
                         height={500}
                         alt={`Article ${article.id}`}
@@ -126,10 +118,16 @@ export default function Article() {
                             Penulis: {article.author}
                           </p>
                           <p className="text-gray-500">
-                            Tanggal: {article.date}
+                            Tanggal: {article.created_at}
                           </p>
                         </div>
-                        <p className="text-gray-600">{article.content}</p>
+                        {/* <p className="text-gray-600">{article.content}</p> */}
+                        {/* cut article.content text only up to 30 words */}
+                        <p className="text-gray-600">
+                          {article.content.split(" ").slice(0, 20).join(" ")}
+                          ...
+                        </p>
+
                         <p className="text-blue-600">Baca Selengkapnya</p>
                       </div>
                     </div>
