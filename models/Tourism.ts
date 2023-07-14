@@ -16,5 +16,4 @@ interface TourismPicture {
   id: number;
   wisata_id: number;
   picture_url: string;
-  caption: string;
 }

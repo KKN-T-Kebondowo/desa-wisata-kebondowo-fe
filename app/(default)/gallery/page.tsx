@@ -1,16 +1,11 @@
 import galleryImages from "../../../data/gallery.json";
-import GalleryComponent, { GalleryImage } from "@/components/gallery";
+import GalleryComponent from "@/components/gallery";
 
 export const metadata = {
   title: "Galeri Kebondowo",
   description: "Page description",
 };
 
-// interface GalleryProps {
-//   galleryImages: GalleryImage[];
-// }
-
-// const Gallery: React.FC<GalleryProps> = () => {
 const Gallery = () => {
   return (
     <>
@@ -70,8 +65,8 @@ const Gallery = () => {
                   Kebondowo
                 </p>
               </div>
+              <GalleryComponent galleryImages={galleryImages} />
             </div>
-            <GalleryComponent galleryImages={galleryImages} />
           </div>
         </div>
       </section>

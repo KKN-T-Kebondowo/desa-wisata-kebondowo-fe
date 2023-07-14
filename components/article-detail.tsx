@@ -1,4 +1,4 @@
-import { Article } from "@/app/models/Article";
+import { Article } from "@/models/Article";
 import Link from "next/link";
 
 interface ArticleDetailProps {
@@ -14,7 +14,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
           <div className="pt-32 pb-12 md:pt-24 md:pb-20">
             {/* Article header */}
             <div className="text-center pb-12 md:pb-16">
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4">
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tighter tracking-tighter mb-4">
                 {article.title}
               </h1>
               <div className="max-w-3xl mx-auto">

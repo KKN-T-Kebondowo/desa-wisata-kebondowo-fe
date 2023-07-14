@@ -47,7 +47,7 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({
             className="relative cursor-pointer"
             key={index}
             data-aos="zoom-y-out"
-            data-aos-delay="200"
+            data-aos-delay={150 * (index + 1)}
             onClick={() => handleImageClick(index)}
           >
             <div className="relative w-full h-64 overflow-hidden">
@@ -92,8 +92,8 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({
               &times;
             </button>
             <Image
-              width={500}
-              height={500}
+              width={1920}
+              height={1080}
               src={galleryImages[selectedImageIndex].picture_url}
               alt=""
               className="w-full"

@@ -1,7 +1,11 @@
 import Artikel from "@/data/article.json";
 import ArticleDetail from "@/components/article-detail";
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
+export default function ArticleDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const slug = params.slug;
 
   // Find the article with the matching slug

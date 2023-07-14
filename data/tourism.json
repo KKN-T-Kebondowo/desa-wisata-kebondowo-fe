@@ -1,4 +1,53 @@
 {
   "message": "Tourism data successfully received",
-  "data": [{}]
+  "data": [
+    {
+      "id": 1,
+      "title": "Bukit Cinta",
+      "slug": "bukit-cinta",
+      "description": "Bukit Cinta adalah destinasi wisata dengan objek wisata Rawa Pening",
+      "cover_picture_url": "https://travelspromo.com/wp-content/uploads/2022/02/jembatan-di-bukit-cinta-ambarawa-1.jpg",
+      "address": "Jl. Raya Ambarawa, Ambarawa, Semarang, Jawa Tengah",
+      "latitude": "-7.254",
+      "longitude": "110.428",
+      "pictures": [
+        {
+          "id": 1,
+          "wisata_id": 1,
+          "picture_url": "https://visitjawatengah.jatengprov.go.id/assets/images/d1f0be3e-ba60-47c8-b33e-b1fc1af188d2.jpg"
+        },
+        {
+          "id": 2,
+          "wisata_id": 1,
+          "picture_url": "https://visitjawatengah.jatengprov.go.id/assets/images/ff7041e8-8e89-4bfb-ab71-aae91bfebe57.png"
+        }
+      ],
+      "created_at": "2020-12-12T00:00:00.000000Z",
+      "updated_at": "2020-12-12T00:00:00.000000Z"
+    },
+    {
+      "id": 2,
+      "title": "Deswita Gili Pesona",
+      "slug": "deswita-gili-pesona",
+      "description": "Deswita Gili Pesona adalah objek wisata dengan view Rawa Pening dan Gunung Ungaran",
+      "cover_picture_url": "/images/gallery/gili-pesona2.jpg",
+      "address": "Jl. Raya Ambarawa, Ambarawa, Semarang, Jawa Tengah",
+      "latitude": "-7.311768219310909",
+      "longitude": "110.40868248733041",
+      "pictures": [
+        {
+          "id": 1,
+          "wisata_id": 1,
+          "picture_url": "https://visitjawatengah.jatengprov.go.id/assets/images/d1f0be3e-ba60-47c8-b33e-b1fc1af188d2.jpg"
+        },
+        {
+          "id": 2,
+          "wisata_id": 1,
+          "picture_url": "https://visitjawatengah.jatengprov.go.id/assets/images/ff7041e8-8e89-4bfb-ab71-aae91bfebe57.png"
+        }
+      ],
+      "created_at": "2020-12-12T00:00:00.000000Z",
+      "updated_at": "2020-12-12T00:00:00.000000Z"
+    }
+  ]
 }

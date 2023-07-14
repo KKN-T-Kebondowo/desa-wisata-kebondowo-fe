@@ -1,10 +1,13 @@
+import TourismCard from "@/components/tourism-card";
+import TourismData from "@/data/tourism.json";
+
 export const metadata = {
   title: "Wisata Kebondowo",
   description:
     "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
 };
 
-export default function Article() {
+export default function Tourism() {
   return (
     <>
       <section className="relative">
@@ -61,6 +64,17 @@ export default function Article() {
                 >
                   Destinasi Pariwisata di Kebondowo
                 </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-5">
+                {TourismData.data.map((item, index) => (
+                  <TourismCard
+                    key={index}
+                    slug={item.slug}
+                    image={item.cover_picture_url}
+                    title={item.title}
+                    // description={item.description}
+                  />
+                ))}
               </div>
             </div>
           </div>
