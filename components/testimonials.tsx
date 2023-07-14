@@ -75,9 +75,8 @@ export default function Testimonials() {
                   />
                 </div>
                 <blockquote className="text-xl font-medium mb-4">
-                  “ I love this product and would recommend it to anyone. Could
-                  be not easier to use, and our multiple websites are wonderful.
-                  We get nice comments all the time. “
+                  “ Desa Kebondowo memiliki potensi wisata dan UMKM yang luar
+                  biasa. Diharapkan kedepannya akan menjadi lebih baik lagi. “
                 </blockquote>
                 <cite className="block font-bold text-lg not-italic mb-1">
                   Ahmad Yani
