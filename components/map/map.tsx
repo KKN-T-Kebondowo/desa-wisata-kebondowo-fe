@@ -10,7 +10,7 @@ interface MapProps {
 
 export default function GoogleMapComponent({ latitude, longitude }: MapProps) {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDPuN66mzz_2tmcSxUn8nLfWDW-Ao29yhE",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
