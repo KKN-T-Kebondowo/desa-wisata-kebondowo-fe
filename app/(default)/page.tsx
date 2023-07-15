@@ -7,7 +7,7 @@ import Hero from "@/components/hero";
 import Features from "@/components/features";
 import FeaturesBlocks from "@/components/features-blocks";
 import Testimonials from "@/components/testimonials";
-import Map from "@/components/map";
+import GoogleMapComponent from "@/components/map/map";
 // import Newsletter from "@/components/newsletter";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Features />
       {/* <FeaturesBlocks /> */}
       <Testimonials />
-      <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
+      <GoogleMapComponent />
 
       {/* <Newsletter /> */}
     </>
