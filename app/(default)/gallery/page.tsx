@@ -6,7 +6,26 @@ export const metadata = {
   description: "Page description",
 };
 
-const Gallery = () => {
+async function getData() {
+  // const res = await fetch("http://localhost:8080/api/galleries", {
+  //   next: { revalidate: 10 },
+  // });
+  const res = await fetch("http://127.0.0.1:8080/api/galleries");
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+const Gallery = async () => {
+  const data = await getData();
+
+  console.log(data);
+
   return (
     <>
       <section className="relative">
@@ -65,7 +84,7 @@ const Gallery = () => {
                   Kebondowo
                 </p>
               </div>
-              <GalleryComponent galleryImages={galleryImages} />
+              <GalleryComponent galleryImages={data.galleries} />
             </div>
           </div>
         </div>
