@@ -1,3 +1,4 @@
+import { formatDateToIndonesian } from "@/helpers/formatDate";
 import { Article } from "@/models/Article";
 import Link from "next/link";
 
@@ -19,7 +20,8 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
               </h1>
               <div className="max-w-3xl mx-auto">
                 <p className="text-xl text-gray-600 mb-8">
-                  Penulis: {article.author} | Tanggal: {article.created_at}
+                  Penulis: {article.author} | Tanggal:{" "}
+                  {formatDateToIndonesian(article.created_at)}
                 </p>
               </div>
               {/* Article content */}
@@ -29,7 +31,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                   src={article.picture_url}
                   alt={`Article ${article.id}`}
                 />
-                <p className="text-gray-600 mt-6">{article.content}</p>
+                <div
+                  className="mt-4 text-lg text-gray-600"
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                ></div>
               </div>
               {/* Back to all articles link */}
               <div className="mt-8">

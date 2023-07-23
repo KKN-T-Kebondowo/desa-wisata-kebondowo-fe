@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Artikel from "@/data/article.json";
 import Pagination from "@/components/pagination";
+import { ArticlesResponse } from "@/models/Article";
+import { formatDateToIndonesian } from "@/helpers/formatDate";
+import { generatePreview } from "@/helpers/htmlElement";
 
 export const metadata = {
   title: "Artikel Kebondowo",
@@ -10,9 +12,24 @@ export const metadata = {
     "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",
 };
 
-export default function Article() {
+async function getData(): Promise<ArticlesResponse> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function Article() {
+  const data = await getData();
+
   const articlesPerPage = 6;
-  const articlesCount = Artikel.data.length;
+  const articlesCount = data.articles.length;
   const totalPages = Math.ceil(articlesCount / articlesPerPage);
 
   return (
@@ -75,7 +92,7 @@ export default function Article() {
               {/* Article section */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {/* Article cards */}
-                {Artikel.data.map((article, idx) => (
+                {data.articles.map((article, idx) => (
                   <Link
                     href={`article/${article.slug}`}
                     className="inline-block mt-4"
@@ -86,7 +103,7 @@ export default function Article() {
                       data-aos-delay={150 * (idx + 1)}
                       key={article.id}
                     >
-                      <img
+                      <Image
                         className="w-full h-64 object-cover object-center rounded-t-lg"
                         src={article.picture_url}
                         width={500}
@@ -102,14 +119,14 @@ export default function Article() {
                             Penulis: {article.author}
                           </p>
                           <p className="text-gray-500">
-                            Tanggal: {article.created_at}
+                            Tanggal:{" "}
+                            {formatDateToIndonesian(article.created_at)}
                           </p>
                         </div>
                         {/* <p className="text-gray-600">{article.content}</p> */}
                         {/* cut article.content text only up to 30 words */}
                         <p className="text-gray-600">
-                          {article.content.split(" ").slice(0, 20).join(" ")}
-                          ...
+                          {generatePreview(article.content, 30)}
                         </p>
 
                         <p className="text-blue-600">Baca Selengkapnya</p>

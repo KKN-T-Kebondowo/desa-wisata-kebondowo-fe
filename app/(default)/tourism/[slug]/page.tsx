@@ -1,8 +1,24 @@
 import GoogleMapComponent from "@/components/map/map";
 import Tourism from "@/data/tourism.json";
+import { OneTourismResponse } from "@/models/Tourism";
 import Link from "next/link";
 
-export default function TourismDetailPage({
+export const metadata = {
+  title: "Wisata Kebondowo",
+  description:
+    "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
+};
+
+async function getData(slug: string): Promise<OneTourismResponse> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms/${slug}`,
+    { cache: "no-store" }
+  );
+
+  return res.json();
+}
+
+export default async function TourismDetailPage({
   params,
 }: {
   params: { slug: string };
@@ -10,13 +26,12 @@ export default function TourismDetailPage({
   const slug = params.slug;
 
   // Find the article with the matching slug
-  const tourism = Tourism.data.find((tourism) => tourism.slug === slug);
+  const data = await getData(slug);
+  const tourism = data.tourism;
 
   if (!tourism) {
     return <div>Tourism not found</div>;
   }
-
-  // const mapUrl = `https://www.google.com/maps/embed/v1/place?key={YOUR_API_KEY}&q=${tourism.latitude},${tourism.longitude}`;
 
   return (
     <>
@@ -34,9 +49,10 @@ export default function TourismDetailPage({
                 src={tourism.cover_picture_url}
                 alt={tourism.title}
               />
-              <p className="mt-4 text-lg text-gray-600">
-                {tourism.description}
-              </p>
+              <div
+                className="mt-4 text-lg text-gray-600"
+                dangerouslySetInnerHTML={{ __html: tourism.description }}
+              ></div>
             </div>
 
             {/* Image gallery */}

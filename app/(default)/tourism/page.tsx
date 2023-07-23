@@ -1,5 +1,6 @@
 import TourismCard from "@/components/tourism-card";
 import TourismData from "@/data/tourism.json";
+import { AllTourismResponse } from "@/models/Tourism";
 
 export const metadata = {
   title: "Wisata Kebondowo",
@@ -7,7 +8,23 @@ export const metadata = {
     "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
 };
 
-export default function Tourism() {
+async function getData(): Promise<AllTourismResponse> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function Tourism() {
+  const data = await getData();
+  console.log(data);
+
   return (
     <>
       <section className="relative">
@@ -66,7 +83,7 @@ export default function Tourism() {
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-5">
-                {TourismData.data.map((item, index) => (
+                {data.tourisms.map((item, index) => (
                   <TourismCard
                     key={index}
                     slug={item.slug}

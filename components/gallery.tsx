@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface GalleryImage {
   picture_url: string;
@@ -39,6 +39,24 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({
     setSelectedImageIndex(null);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const modalContainer = document.querySelector(
+        ".fullscreen-modal-container"
+      );
+
+      if (modalContainer && !modalContainer.contains(event.target as Node)) {
+        handleCloseModal();
+      }
+    };
+
+    document.body.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -72,7 +90,7 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({
       {/* Fullscreen modal */}
       {selectedImageIndex !== null && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-          <div className="max-w-3xl mx-auto relative">
+          <div className="max-w-3xl mx-auto relative fullscreen-modal-container">
             <button
               className="absolute top-1/2 transform -translate-y-1/2 left-0 m-4 text-white text-3xl focus:outline-none"
               onClick={handlePreviousImage}

@@ -8,3 +8,11 @@ export interface Article {
   created_at: string;
   updated_at: string;
 }
+
+export interface ArticlesResponse {
+  articles: Article[];
+}
+
+export interface ArticleResponse {
+  article: Article;
+}

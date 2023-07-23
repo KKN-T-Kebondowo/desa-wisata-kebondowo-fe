@@ -7,14 +7,12 @@ export const metadata = {
 };
 
 async function getData() {
-  // const res = await fetch("http://localhost:8080/api/galleries", {
-  //   next: { revalidate: 10 },
-  // });
-  const res = await fetch("http://127.0.0.1:8080/api/galleries");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/galleries`,
+    { cache: "no-store" }
+  );
 
-  // Recommendation: handle errors
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -23,8 +21,6 @@ async function getData() {
 
 const Gallery = async () => {
   const data = await getData();
-
-  console.log(data);
 
   return (
     <>
