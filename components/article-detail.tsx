@@ -1,5 +1,6 @@
 import { formatDateToIndonesian } from "@/helpers/formatDate";
 import { Article } from "@/models/Article";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ArticleDetailProps {
@@ -26,10 +27,12 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
               </div>
               {/* Article content */}
               <div className="max-w-3xl mx-auto">
-                <img
+                <Image
                   className="w-full h-64 object-cover object-center rounded-t-lg"
                   src={article.picture_url}
                   alt={`Article ${article.id}`}
+                  width={1000}
+                  height={700}
                 />
                 <div
                   className="mt-4 text-lg text-gray-600"
