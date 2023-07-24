@@ -14,8 +14,7 @@ export const metadata = {
 
 async function getData(): Promise<ArticlesResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles`,
-    { cache: "no-store" }
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles`
   );
 
   if (!res.ok) {

@@ -8,8 +8,7 @@ export const metadata = {
 
 async function getData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/galleries`,
-    { cache: "no-store" }
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/galleries`
   );
 
   if (!res.ok) {

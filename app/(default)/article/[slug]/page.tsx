@@ -9,8 +9,7 @@ export const metadata = {
 
 async function getData(slug: string): Promise<ArticleResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles/${slug}`,
-    { cache: "no-store" }
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles/${slug}`
   );
 
   return res.json();

@@ -11,8 +11,7 @@ export const metadata = {
 
 async function getData(slug: string): Promise<OneTourismResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms/${slug}`,
-    { cache: "no-store" }
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms/${slug}`
   );
 
   return res.json();

@@ -10,8 +10,7 @@ export const metadata = {
 
 async function getData(): Promise<AllTourismResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`,
-    { cache: "no-store" }
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`
   );
 
   if (!res.ok) {
