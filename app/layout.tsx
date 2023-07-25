@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  icon: "/images/gallery/icon-app.svg",
   title: "Desa Wisata Kebondowo",
   description:
     "Website Desa Wisata Kebondowo Kecamatan Banyubiru Kabupaten Semarang",
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-inter antialiased bg-white text-gray-900 tracking-tight`}
       >
-          {children}
+        {children}
       </body>
     </html>
   );
