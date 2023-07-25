@@ -102,6 +102,15 @@ export default function MobileMenu() {
             </li>
             <li>
               <Link
+                href="/umkm"
+                className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                UMKM
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/tourism"
                 className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center"
                 onClick={() => setMobileNavOpen(false)}
