@@ -1,5 +1,6 @@
 import GoogleMapComponent from "@/components/map/map";
 import { OneUMKMResponse } from "@/models/UMKM";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -81,21 +82,25 @@ export default async function TourismDetailPage({
             </div>
 
             {/* Image gallery */}
-            <div className="pb-12 md:pb-16 text-center md:text-left">
-              <h2 className="text-3xl font-bold leading-tight tracking-tight">
-                Galeri
-              </h2>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {umkm.pictures.map((pic, index) => (
-                  <img
-                    key={index}
-                    className="object-cover rounded-lg"
-                    src={pic.picture_url}
-                    alt={`pic-${index}`}
-                  />
-                ))}
+            {umkm.pictures && (
+              <div className="pb-12 md:pb-16 text-center md:text-left">
+                <h2 className="text-3xl font-bold leading-tight tracking-tight">
+                  Galeri
+                </h2>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {umkm.pictures.map((pic, index) => (
+                    <Image
+                      width={500}
+                      height={500}
+                      key={index}
+                      className="object-cover rounded-lg"
+                      src={pic.picture_url}
+                      alt={`pic-${index}`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Map */}
             <h2 className="text-3xl font-bold leading-tight tracking-tight">

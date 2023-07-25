@@ -9,7 +9,7 @@ export interface UMKM {
   visitor: number;
   latitude: number;
   longitude: number;
-  pictures: UMKMPicture[];
+  pictures?: UMKMPicture[];
   created_at: string;
   updated_at: string;
 }

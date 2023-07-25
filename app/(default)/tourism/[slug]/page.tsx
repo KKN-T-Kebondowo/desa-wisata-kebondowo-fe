@@ -1,6 +1,7 @@
 import GoogleMapComponent from "@/components/map/map";
 import Tourism from "@/data/tourism.json";
 import { OneTourismResponse } from "@/models/Tourism";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -63,7 +64,9 @@ export default async function TourismDetailPage({
                 </h2>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {tourism.pictures.map((pic, index) => (
-                    <img
+                    <Image
+                      width={500}
+                      height={500}
                       key={index}
                       className="object-cover rounded-lg"
                       src={pic.picture_url}
