@@ -1,6 +1,5 @@
 import TourismCard from "@/components/tourism-card";
-import TourismData from "@/data/tourism.json";
-import { AllTourismResponse } from "@/models/Tourism";
+import { AllUMKMResponse } from "@/models/UMKM";
 
 export const metadata = {
   title: "Wisata Kebondowo",
@@ -8,10 +7,8 @@ export const metadata = {
     "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
 };
 
-async function getData(): Promise<AllTourismResponse> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`
-  );
+async function getData(): Promise<AllUMKMResponse> {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/api/umkms`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -22,7 +19,6 @@ async function getData(): Promise<AllTourismResponse> {
 
 export default async function Tourism() {
   const data = await getData();
-  console.log(data);
 
   return (
     <>
@@ -67,7 +63,7 @@ export default async function Tourism() {
                 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
                 data-aos="zoom-y-out"
               >
-                Wisata{" "}
+                UMKM{" "}
                 <span className="bg-clip-text  text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
                   Kebondowo
                 </span>
@@ -78,13 +74,13 @@ export default async function Tourism() {
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
-                  Destinasi Pariwisata di Kebondowo
+                  UMKM di Kebondowo
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-5">
-                {data.tourisms.map((item, index) => (
+                {data.umkms.map((item, index) => (
                   <TourismCard
-                    path="tourism"
+                    path="umkm"
                     key={index}
                     slug={item.slug}
                     image={item.cover_picture_url}
