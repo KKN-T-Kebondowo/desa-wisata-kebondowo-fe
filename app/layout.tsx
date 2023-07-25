@@ -23,7 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* icon on public folder */}
-        <link rel="icon" href="../public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
+        {/* font */}
       </head>
       <body
         className={`${inter.variable} font-inter antialiased bg-white text-gray-900 tracking-tight`}
