@@ -7,7 +7,7 @@ export interface Tourism {
   address: string;
   latitude: number;
   longitude: number;
-  pictures: TourismPicture[];
+  pictures?: TourismPicture[];
   created_at: string;
   updated_at: string;
 }

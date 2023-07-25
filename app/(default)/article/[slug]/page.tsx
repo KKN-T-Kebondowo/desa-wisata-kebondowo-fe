@@ -9,7 +9,8 @@ export const metadata = {
 
 async function getData(slug: string): Promise<ArticleResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles/${slug}`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles/${slug}`,
+    { next: { revalidate: 60 } }
   );
 
   return res.json();

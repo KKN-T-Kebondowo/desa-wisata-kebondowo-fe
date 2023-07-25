@@ -9,7 +9,8 @@ export const metadata = {
 
 async function getData(slug: string): Promise<OneUMKMResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/umkms/${slug}`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/umkms/${slug}`,
+    { next: { revalidate: 60 } }
   );
 
   return res.json();

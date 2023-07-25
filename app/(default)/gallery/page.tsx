@@ -8,7 +8,8 @@ export const metadata = {
 
 async function getData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/galleries`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/galleries`,
+    { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {

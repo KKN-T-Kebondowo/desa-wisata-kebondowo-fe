@@ -10,7 +10,8 @@ export const metadata = {
 
 async function getData(): Promise<AllTourismResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`,
+    { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {

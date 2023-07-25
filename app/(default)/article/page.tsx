@@ -14,7 +14,8 @@ export const metadata = {
 
 async function getData(): Promise<ArticlesResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/articles`,
+    { next: { revalidate: 60 } }
   );
 
   if (!res.ok) {

@@ -11,7 +11,8 @@ export const metadata = {
 
 async function getData(slug: string): Promise<OneTourismResponse> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms/${slug}`
+    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms/${slug}`,
+    { next: { revalidate: 60 } }
   );
 
   return res.json();
@@ -55,21 +56,23 @@ export default async function TourismDetailPage({
             </div>
 
             {/* Image gallery */}
-            <div className="pb-12 md:pb-16 text-center md:text-left">
-              <h2 className="text-3xl font-bold leading-tight tracking-tight">
-                Galeri
-              </h2>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {tourism.pictures.map((pic, index) => (
-                  <img
-                    key={index}
-                    className="object-cover rounded-lg"
-                    src={pic.picture_url}
-                    alt={`pic-${index}`}
-                  />
-                ))}
+            {tourism.pictures && (
+              <div className="pb-12 md:pb-16 text-center md:text-left">
+                <h2 className="text-3xl font-bold leading-tight tracking-tight">
+                  Galeri
+                </h2>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {tourism.pictures.map((pic, index) => (
+                    <img
+                      key={index}
+                      className="object-cover rounded-lg"
+                      src={pic.picture_url}
+                      alt={`pic-${index}`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Map */}
             <h2 className="text-3xl font-bold leading-tight tracking-tight">

@@ -8,7 +8,9 @@ export const metadata = {
 };
 
 async function getData(): Promise<AllUMKMResponse> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/api/umkms`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/api/umkms`, {
+    next: { revalidate: 60 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
