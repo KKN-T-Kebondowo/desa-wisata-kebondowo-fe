@@ -7,6 +7,7 @@ import { formatDateToIndonesian } from "@/helpers/formatDate";
 import { generatePreview } from "@/helpers/htmlElement";
 
 export const metadata = {
+  icon: "/images/gallery/icon-app.svg",
   title: "Artikel Kebondowo",
   description:
     "Kumpulan artikel dan berita di Desa Kebondowo, Kecamatan Banyubiru",

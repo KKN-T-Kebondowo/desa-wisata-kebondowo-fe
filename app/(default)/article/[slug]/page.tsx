@@ -3,6 +3,7 @@ import ArticleDetail from "@/components/article-detail";
 import { ArticleResponse } from "@/models/Article";
 
 export const metadata = {
+  icon: "/images/gallery/icon-app.svg",
   title: "Artikel Kebondowo",
   description: "Kumpulan artikel di Desa Kebondowo, Kecamatan Banyubiru",
 };

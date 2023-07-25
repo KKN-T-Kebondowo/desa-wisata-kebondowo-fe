@@ -1,4 +1,5 @@
 export const metadata = {
+  icon: "/images/gallery/icon-app.svg",
   title: "Desa Wisata Kebondowo",
   description: "Desa Wisata Kebondowo",
 };
