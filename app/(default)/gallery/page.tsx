@@ -2,7 +2,6 @@ import galleryImages from "../../../data/gallery.json";
 import GalleryComponent from "@/components/gallery";
 
 export const metadata = {
-  icon: "/images/gallery/icon-app.svg",
   title: "Galeri Kebondowo",
   description: "Page description",
 };

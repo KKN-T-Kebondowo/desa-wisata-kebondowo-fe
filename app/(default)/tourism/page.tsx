@@ -3,7 +3,6 @@ import TourismData from "@/data/tourism.json";
 import { AllTourismResponse } from "@/models/Tourism";
 
 export const metadata = {
-  icon: "/images/gallery/icon-app.svg",
   title: "Wisata Kebondowo",
   description:
     "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",

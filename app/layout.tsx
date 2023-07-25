@@ -9,7 +9,6 @@ const inter = Inter({
 });
 
 export const metadata = {
-  icon: "/images/gallery/icon-app.svg",
   title: "Desa Wisata Kebondowo",
   description:
     "Website Desa Wisata Kebondowo Kecamatan Banyubiru Kabupaten Semarang",

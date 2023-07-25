@@ -4,7 +4,6 @@ import { OneTourismResponse } from "@/models/Tourism";
 import Link from "next/link";
 
 export const metadata = {
-  icon: "/images/gallery/icon-app.svg",
   title: "Wisata Kebondowo",
   description:
     "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
