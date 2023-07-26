@@ -1,29 +1,14 @@
-import TourismCard from "@/components/tourism-card";
-import TourismData from "@/data/tourism.json";
-import { AllTourismResponse } from "@/models/Tourism";
+import AboutData from "@/data/about.json";
+import { AboutResponse } from "@/models/About";
+import Image from "next/image";
 
 export const metadata = {
-  title: "Wisata Kebondowo",
-  description:
-    "Kumpulan destinasi wisata di Desa Kebondowo, Kecamatan Banyubiru",
+  title: "Tentang Kami",
+  description: "Page description",
 };
 
-async function getData(): Promise<AllTourismResponse> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/api/tourisms`,
-    { next: { revalidate: 60 } }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-export default async function Tourism() {
-  const data = await getData();
-
+const Gallery = async () => {
+  const data: AboutResponse = AboutData;
   return (
     <>
       <section className="relative">
@@ -67,9 +52,9 @@ export default async function Tourism() {
                 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
                 data-aos="zoom-y-out"
               >
-                Wisata{" "}
+                Tentang{" "}
                 <span className="bg-clip-text  text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                  Kebondowo
+                  Kami
                 </span>
               </h1>
               <div className="max-w-3xl mx-auto">
@@ -78,19 +63,25 @@ export default async function Tourism() {
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
-                  Destinasi Pariwisata di Kebondowo
+                  Anggota Tim KKN Tematik Undip Kebondowo 2023
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-5">
-                {data.tourisms.map((item, index) => (
-                  <TourismCard
-                    path="tourism"
-                    key={index}
-                    slug={item.slug}
-                    image={item.cover_picture_url}
-                    title={item.title}
-                    // description={item.description}
-                  />
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-5 md:gap-y-12">
+                {data.about.map((d, index) => (
+                  <div className="flex flex-col items-center gap-5">
+                    <Image
+                      width={1000}
+                      height={1000}
+                      className=" w-32 h-32 md:w-64 md:h-64"
+                      src={d.picture_url}
+                      alt={d.name}
+                    />
+                    <div>
+                      <p className="md:text-xl font-bold">{d.name}</p>
+                      <p className="font-semibold tracking-wider">{d.major}</p>
+                      <p className="tracking-wider">{d.role}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -99,4 +90,6 @@ export default async function Tourism() {
       </section>
     </>
   );
-}
+};
+
+export default Gallery;

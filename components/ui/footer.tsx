@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Logo from "./logo";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -152,12 +153,12 @@ export default function Footer() {
             <h6 className="text-gray-800 font-medium mb-2">Profil</h6>
             <ul className="text-sm">
               <li className="mb-2">
-                <a
-                  href="#0"
+                <Link
+                  href="/about"
                   className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                 >
                   Tentang Kami
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
                 <a

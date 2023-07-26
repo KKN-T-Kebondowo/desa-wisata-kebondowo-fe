@@ -35,7 +35,7 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                   height={1000}
                 />
                 <div
-                  className="mt-4 text-lg text-gray-600 text-justify flex flex-col gap-5" // Add text-justify class for justification
+                  className="mt-4 text-lg text-gray-600 text-justify flex flex-col" // Add text-justify class for justification
                   dangerouslySetInnerHTML={{ __html: article.content }}
                 ></div>
               </div>
