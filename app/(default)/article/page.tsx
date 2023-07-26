@@ -111,7 +111,7 @@ export default async function Article() {
                         alt={`Article ${article.id}`}
                       />
                       <div className="p-6">
-                        <h3 className="text-2xl font-semibold">
+                        <h3 className="text-lg font-semibold">
                           {article.title}
                         </h3>
                         <div className="flex text-xs justify-between items-center my-2">
@@ -125,11 +125,13 @@ export default async function Article() {
                         </div>
                         {/* <p className="text-gray-600">{article.content}</p> */}
                         {/* cut article.content text only up to 30 words */}
-                        <p className="text-gray-600">
-                          {generatePreview(article.content, 30)}
+                        <p className="text-gray-600 text-sm my-3">
+                          {generatePreview(article.content, 25)}
                         </p>
 
-                        <p className="text-blue-600">Baca Selengkapnya</p>
+                        <p className="text-blue-600 text-sm">
+                          Baca Selengkapnya
+                        </p>
                       </div>
                     </div>
                   </Link>
