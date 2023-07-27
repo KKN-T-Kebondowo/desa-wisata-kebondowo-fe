@@ -3,7 +3,7 @@ import GalleryComponent from "@/components/gallery";
 
 export const metadata = {
   title: "Galeri Kebondowo",
-  description: "Page description",
+  description: "Galeri berisikan foto-foto aktivitas warga di Desa Kebondowo",
 };
 
 async function getData() {

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: "Tentang Kami",
-  description: "Page description",
+  description: "Anggota KKN Tematik Undip Kebondowo 2023",
 };
 
 const Gallery = async () => {
