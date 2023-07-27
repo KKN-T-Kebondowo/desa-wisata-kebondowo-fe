@@ -10,7 +10,7 @@
       "name": "Maria Claricida K. D.",
       "major": "Perencanaan Wilayah dan Kota",
       "role": "Sekretaris",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/maria.png"
     },
     {
       "name": "Deny Rahmad Aditya",
@@ -28,85 +28,85 @@
       "name": "Ghina Shofia",
       "major": "Arsitektur",
       "role": "Bendahara",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/ghina.png"
     },
     {
       "name": "Muhamad Fais Junaidi",
       "major": "Ekonomi Islam",
       "role": "Humas",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/fais.png"
     },
     {
       "name": "Surotul Hadiyani",
       "major": "Arsitektur",
       "role": "Humas",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/yani.png"
     },
     {
       "name": "Elsa Zahra Khairunnisa'",
       "major": "Akuntansi",
       "role": "Humas",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/elsa.png"
     },
     {
       "name": "Anisa Firawati",
       "major": "Ekonomi Islam",
       "role": "Humas",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/anisa.png"
     },
     {
       "name": "Rif'an Fatoni Febrianto",
       "major": "Informatika",
       "role": "PDD",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/rifan.png"
     },
     {
       "name": "Virzelia Ninetta Sujarto",
       "major": "Akuntansi",
       "role": "PDD",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/azel.png"
     },
     {
       "name": "Septi Itsnani Azizah",
       "major": "Ekonomi Islam",
       "role": "PDD",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/itsna.png"
     },
     {
       "name": "Zam Zam Fahlafi",
       "major": "Ekonomi Islam",
       "role": "Perlengkapan",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/zamzam.png"
     },
     {
       "name": "Thariq Hanifan Abdurrabi",
       "major": "Ekonomi Islam",
       "role": "Perlengkapan",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/thariq.png"
     },
     {
       "name": "Gilang Dito Pratama",
       "major": "Ekonomi Islam",
       "role": "Perlengkapan",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/gilang.png"
     },
     {
       "name": "William Gozali",
       "major": "Teknik Geodesi",
       "role": "Konsumsi",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/kokoh.png"
     },
     {
       "name": "Dhia Zalfa Zahira",
       "major": "Teknik Geodesi",
       "role": "Konsumsi",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/dhia.png"
     },
     {
       "name": "Noviana Febrianti",
       "major": "Ekonomi Islam",
       "role": "Konsumsi",
-      "picture_url": "/images/testimonial.jpg"
+      "picture_url": "/images/profile/novi.png"
     }
   ]
 }
