@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Top area: Blocks */}
         <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-gray-200">
           {/* 1st block */}
-          <div className="sm:col-span-12 lg:col-span-4">
+          <div className="sm:col-span-12 md:col-span-3 lg:col-span-4">
             <div className="mb-2 flex gap-2">
               {/* <Logo /> */}
               <Image
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           {/* 2nd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-4">
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-3">
             <h6 className="text-gray-800 font-medium mb-2">Halaman Lain</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -101,55 +101,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3rd block */}
-          {/* <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Resources</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Tutorials & Guides
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Support Center
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Partners
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
           {/* 4th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-4">
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-3">
             <h6 className="text-gray-800 font-medium mb-2">Profil</h6>
             <ul className="text-sm">
               <li className="mb-2">
@@ -166,6 +119,22 @@ export default function Footer() {
                   className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                 >
                   Tim Pengembang
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* 3rd block */}
+          <div className="sm:col-span-12 md:col-span-3 lg:col-span-2">
+            <h6 className="text-gray-800 font-medium mb-2">Kontak</h6>
+            <ul className="text-sm">
+              <li className="">
+                <a
+                  href="https://wa.me/+6285797585270"
+                  target="_blank"
+                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
+                >
+                  Ibu Ani Nuraeni <br /> Sekretaris Desa <br /> 085797585270
                 </a>
               </li>
             </ul>
