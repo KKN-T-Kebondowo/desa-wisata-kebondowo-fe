@@ -134,7 +134,7 @@ export default function Footer() {
                   target="_blank"
                   className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
                 >
-                  Ibu Ani Nuraeni <br /> Sekretaris Desa <br /> 085797585270
+                  Ibu Ani Nur Aeni <br /> Sekretaris Desa <br /> 085797585270
                 </a>
               </li>
             </ul>
